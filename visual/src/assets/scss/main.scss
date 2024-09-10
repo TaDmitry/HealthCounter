@@ -1,0 +1,21 @@
+// Абстрактные стили
+@import 'abstracts/functions';
+@import 'abstracts/mixins';
+@import 'abstracts/placeholders';
+@import 'abstracts/variables';
+
+// Базовые стили
+@import 'base/global';
+@import 'base/typography';
+
+// Стили для компонентов
+@import 'components/button';
+@import 'components/parallax';
+
+// Структура страницы
+@import 'layout/header';
+
+// Стили для страниц
+@import 'pages/home';
+
+// Сторонние библиотеки

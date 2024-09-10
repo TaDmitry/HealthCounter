@@ -1,0 +1,29 @@
+// Типографика
+
+.libre-baskerville-regular {
+	font-family: "Libre Baskerville", serif;
+	font-weight: 400;
+	font-style: normal;
+	src: url(../src/assets/fonts/LibreBaskerville-Regular.ttf);
+}
+
+.libre-baskerville-regular-italic {
+	font-family: "Libre Baskerville", serif;
+	font-weight: 400;
+	font-style: italic;
+	src: url(../src/assets/fonts/LibreBaskerville-Italic.ttf);
+}
+
+.libre-baskerville-bold {
+	font-family: "Libre Baskerville", serif;
+	font-weight: 700;
+	font-style: normal;
+	src: url(../src/assets/fonts/LibreBaskerville-Bold.ttf);
+}
+
+.unifrakturmaguntia-regular {
+	font-family: "UnifrakturMaguntia", system-ui;
+	font-weight: 400;
+	font-style: normal;
+	src: url(../src/assets/fonts/UnifrakturMaguntia-Regular.ttf);
+}

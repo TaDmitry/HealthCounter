@@ -1,0 +1,22 @@
+// Переменные проекта
+:root {
+	// Default Light Theme Colors 
+	--color-000: rgba(0, 0, 0, 0);
+	--color-white: #ffffff;
+
+
+	// Default Dark Theme Colors 
+	--color-black: #000000;
+}
+
+:root {
+	--transparent: var(--color-000);
+	--white: var(--color-white);
+
+	--black: var(--color-black);
+}
+
+.darkstyle {
+	--white: var(--color-black);
+	--black: var(--color-white);
+}
