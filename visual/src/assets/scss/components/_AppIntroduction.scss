@@ -1,0 +1,89 @@
+.app__introduction-container {
+	width: 100%;
+}
+
+.app__introduction-window {
+	margin: 10% 0 0;
+	padding: 1% 2%;
+	backdrop-filter: blur(5px);
+	background: #ffffff1c;
+	box-shadow: 0 0 15px 0px #1e0043ad;
+	font-size: clamp(1rem, 0.583rem + 2.22vw, 2.25rem);
+	color: #ffffff;
+	font-family: "UnifrakturMaguntia", system-ui;
+	font-weight: 400;
+	font-style: normal;
+	width: 100%;
+	max-width: calc(500px + 2%);
+	border-radius: 16px;
+
+	p {
+		display: flex;
+		justify-content: center;
+		align-items: baseline
+	}
+
+	samp {
+		background: linear-gradient(90deg, #d77be5 33%, #be63e5 66%, #6c38cc);
+		background-clip: text;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		font-family: "UnifrakturMaguntia", system-ui;
+		font-weight: 400;
+		font-style: italic;
+
+		position: relative;
+		display: flex;
+		align-items: center
+	}
+}
+
+.app__cursor {
+	display: inline-block;
+	line-height: inherit;
+	vertical-align: bottom;
+	height: 65%;
+	width: 1px;
+	background-color: #ffffff;
+	right: -1px;
+	position: absolute;
+}
+
+.app__introduction-button {
+	width: 100%;
+	text-align: center;
+	margin: 10px 0 5px;
+	background: #3e0885;
+	border-radius: 100px;
+	font-family: "UnifrakturMaguntia", system-ui;
+	font-weight: 400;
+	font-style: normal;
+	box-shadow: inset 0px 0px 10px 1px rgb(8, 20, 29);
+
+	a {
+		font-size: clamp(1rem, 0.792rem + 1.11vw, 1.625rem);
+		color: #ffffff;
+		padding: 3% 2%;
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+
+	:active {
+		font-size: clamp(1rem, 0.8rem + 1.6vw, 1.72rem);
+	}
+}
+
+@media (hover: hover) {
+	.app__introduction-button:hover {
+		background: #a110aa;
+		box-shadow: inset 0px 0px 7px 3px rgb(8, 20, 29);
+	}
+}
+
+@media (max-width: 950px) {
+	.app__introduction-window {
+		margin: 10vh auto 0;
+		max-width: 80%;
+	}
+}

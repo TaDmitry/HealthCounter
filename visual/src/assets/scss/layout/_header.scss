@@ -1,0 +1,48 @@
+.header {
+	display: flex;
+	justify-content: center;
+	background: #ffffff1c;
+	backdrop-filter: blur(5px);
+	box-shadow: 0 0 15px 0px #1e0043ad;
+}
+
+.header__navigation {
+	width: 100%;
+	max-width: 1280px;
+	margin: 0 2.5%;
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+}
+
+.header__logo {
+	h1 {
+		font-size: clamp(1rem, 0.667rem + 1.78vw, 2rem);
+		color: #ffffff;
+		font-family: "UnifrakturMaguntia", system-ui;
+	}
+}
+
+.header__nav {
+	display: flex;
+	align-items: center;
+}
+
+.header__office-a {
+	display: flex;
+	align-items: baseline;
+
+	i {
+		font-size: clamp(1rem, 0.875rem + 0.67vw, 1.375rem);
+		color: #ffffff;
+	}
+
+	p {
+		display: flex;
+		align-items: center;
+		font-size: clamp(1rem, 0.875rem + 0.67vw, 1.375rem);
+		color: #ffffff;
+		margin-left: 8px;
+		font-family: "UnifrakturMaguntia", system-ui;
+	}
+}

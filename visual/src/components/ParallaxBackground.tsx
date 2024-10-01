@@ -5,7 +5,7 @@ interface ParallaxBackgroundProps {
 }
 
 const ParallaxBackground: React.FC<ParallaxBackgroundProps> = ({ imageSrc }) => {
-	const [offset, setOffset] = useState({ x: 0, y: 0 });
+	const [offset, setOffset] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
 	const maxOffset = 5; //! Максимальное смещение в процентах
 
 	useEffect(() => {
@@ -14,18 +14,19 @@ const ParallaxBackground: React.FC<ParallaxBackgroundProps> = ({ imageSrc }) => 
 			const coordX = (e.pageX - innerWidth / 2) / innerWidth;
 			const coordY = (e.pageY - innerHeight / 2) / innerHeight;
 
+			// Ограничиваем смещение maxOffset
 			setOffset({
 				x: Math.max(Math.min(coordX * maxOffset, maxOffset), -maxOffset),
 				y: Math.max(Math.min(coordY * maxOffset, maxOffset), -maxOffset),
 			});
 		};
 
-		window.addEventListener("mousemove", handleMouseMove);
+		window.addEventListener("mousemove", handleMouseMove); // Добавляем слушатель на движение мыши
 
 		return () => {
-			window.removeEventListener("mousemove", handleMouseMove);
+			window.removeEventListener("mousemove", handleMouseMove); // Удаляем слушатель при размонтировании компонента
 		};
-	}, []);
+	}, [maxOffset]);
 
 	return (
 		<div className="parallax__background">

@@ -9,11 +9,11 @@
 @import 'base/typography';
 
 // Стили для компонентов
-@import 'components/button';
-@import 'components/parallax';
+@import 'components/AppIntroduction';
+@import 'components/ParallaxBackground';
 
 // Структура страницы
-@import 'layout/header-app';
+@import 'layout/header';
 
 // Стили для страниц
 @import 'pages/home';
