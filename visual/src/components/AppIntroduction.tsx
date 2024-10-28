@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const AppIntroduction: React.FC = () => {
 	const fullText = "Lorem"; //! Текст для печати
@@ -65,7 +66,7 @@ const AppIntroduction: React.FC = () => {
 						</samp>
 					</p>
 					<button className="app__introduction-button">
-						<a href="../../pages/Register">Register</a>
+						<Link to="/register">Register</Link>
 					</button>
 				</div>
 			</div>
