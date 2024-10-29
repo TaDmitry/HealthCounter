@@ -1,6 +1,5 @@
 import { Schema, model } from "mongoose";
 
-// Интерфейс для пользователя
 interface IUser {
 	username: string;
 	email: string;

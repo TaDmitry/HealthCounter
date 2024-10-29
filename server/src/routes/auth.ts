@@ -1,24 +1,50 @@
 import { Router } from "express";
-import User from "../models/User"; //! Импорт модели пользователя
-
+import User from "../models/User";
+//! bcrypt-------------------------------------------
 const router = Router();
 
-// Маршрут для регистрации
+// Маршрут для регистрации пользователя
 router.post("/register", async (req, res) => {
-	const { username, email, password } = req.body;
-
-	// Проверка, что все поля заполнены
-	if (!username || !email || !password) {
-		return res.status(400).send("All fields are required");
-	}
-
 	try {
-		// Создание нового пользователя
-		const newUser = new User({ username, email, password });
-		await newUser.save();
-		res.status(201).send("User registered successfully");
+		const { username, email, password } = req.body;
+
+		const existingUser = await User.findOne({ email });
+		if (existingUser) {
+			return res.status(400).json({ message: "User already exists" });
+		}
+
+		const user = new User({
+			username,
+			email,
+			password,
+		});
+
+		await user.save();
+
+		res.status(201).json({ message: "User created successfully" });
 	} catch (error) {
-		res.status(500).send("Error registering user");
+		console.error(error);
+		res.status(500).json({ message: "Server error" });
+	}
+});
+
+router.post("/login", async (req, res) => {
+	try {
+		const { email, password } = req.body;
+
+		const user = await User.findOne({ email });
+		if (!user) {
+			return res.status(400).json({ message: "User not found" });
+		}
+
+		if (user.password !== password) {
+			return res.status(400).json({ message: "Invalid credentials" });
+		}
+
+		res.status(200).json({ message: "Login successful" });
+	} catch (error) {
+		console.error(error);
+		res.status(500).json({ message: "Server error" });
 	}
 });
 
