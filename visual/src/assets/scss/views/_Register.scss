@@ -2,7 +2,7 @@
 	&::before {
 		@include __Front-mask;
 		position: fixed;
-		z-index: 0;
+		z-index: -1;
 	}
 }
 
@@ -11,14 +11,13 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	width: fit-content;
+	width: 50%;
 	margin: 6% auto 4%;
 	padding: 2% 5%;
 	backdrop-filter: blur(5px);
 	background: var(--color-001);
 	box-shadow: 0 0 15px 0px #1e0043ad;
 	border-radius: 16px;
-	// overflow: hidden;
 }
 
 .form-box {
@@ -27,10 +26,10 @@
 	font-family: "UnifrakturMaguntia", system-ui;
 	font-weight: 400;
 	font-style: normal;
-
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	width: -webkit-fill-available;
 }
 
 .form-rg {
@@ -39,6 +38,7 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	width: -webkit-fill-available;
 }
 
 .input-box {
@@ -68,7 +68,7 @@
 		height: 100%;
 		background: transparent;
 		outline: none;
-		font-size: clamp(1rem, 0.2rem + 1.8vw, 2.2rem);
+		font-size: clamp(0.938rem, 0.75rem + 1vw, 1.5rem);
 		color: var(--white);
 		font-family: "Libre Baskerville", serif;
 		font-weight: 400;
@@ -143,5 +143,23 @@
 	.form-rg__button:hover {
 		background: #a110aa;
 		box-shadow: inset 0px 0px 7px 3px rgb(8, 20, 29);
+	}
+}
+
+@media (max-width: 800px) {
+	.form-rg__wrapper {
+		width: 60%;
+	}
+}
+
+@media (max-width: 550px) {
+	.form-rg__wrapper {
+		width: 75%;
+	}
+}
+
+@media (max-width: 365px) {
+	.form-rg__wrapper {
+		width: 90%;
 	}
 }

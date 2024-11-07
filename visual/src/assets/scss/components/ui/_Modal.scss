@@ -1,0 +1,56 @@
+.modal-overlay {
+	position: fixed;
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	top: 10%;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.5);
+	padding: 0 6%;
+	z-index: 999;
+}
+
+.modal-content {
+	position: relative;
+	display: flex;
+	width: fit-content;
+	padding: 3% 6%;
+	background: #171717;
+	box-shadow: 0 0 15px 0px rgba(30, 0, 67, 0.6784313725);
+	border-radius: 16px;
+	color: var(--white);
+	font-family: "Libre Baskerville", serif;
+	font-weight: 400;
+	font-style: normal;
+	flex-direction: column;
+	text-align: center;
+	font-size: clamp(1rem, 0.3rem + 1.4vw, 2.25rem);
+
+	p {
+		text-wrap: pretty;
+	}
+}
+
+.modal-close {
+	position: absolute;
+	display: flex;
+	top: 0;
+	right: 0;
+	font-size: 20px;
+	cursor: pointer;
+	background: #ffffff;
+	border-radius: 0 40%;
+	padding: 2px 4px;
+	font-size: clamp(1rem, 0.5rem + 2.9vw, 2.25rem);
+}
+
+.modal-content__messages {
+	display: flex;
+	font-style: normal;
+	justify-content: center;
+	width: -webkit-fill-available;
+	font-family: "UnifrakturMaguntia", system-ui;
+	font-weight: 400;
+}
