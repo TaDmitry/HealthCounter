@@ -9,14 +9,13 @@
 @import 'base/typography';
 
 // Стили для компонентов
-@import 'components/ui/Modal';
-@import 'components/AppIntroduction';
-@import 'components/ParallaxBackground';
+@import 'components/ui/modal';
+@import 'components/appIntroduction';
+@import 'components/parallaxBackground';
 
 // Структура страницы
 @import 'layout/header';
 
 // Стили для страниц
-@import 'views/Register';
-
-// Сторонние библиотеки
+@import 'views/personalAccount';
+@import 'views/register';

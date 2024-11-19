@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import AppHeader from "../../layout/Header";
+import Header from "../../layout/Header";
 import Modal from "../../components/ui/Modal";
 import LoginForm from "./LoginForm";
 import RegisterForm from "./RegisterForm";
@@ -22,14 +22,17 @@ const Register: React.FC = () => {
 	const handleRegister = async (username: string, email: string, password: string) => {
 		const data = await registerUser(username, email, password);
 
-		// Проверка на успех по содержанию сообщения
 		if (data.message === "User created successfully") {
-			// Показать сообщение об успешной регистрации и переключиться на форму логина
-			setModalMessage("Registration successful! Please log in.");
-			openModal();
-			setIsLoginForm(true); // Переход на форму логина напрямую
+			const loginData = await loginUser(email, password);
+			if (loginData.message === "Login successful") {
+				closeModal();
+				navigate("/register/personal-account");
+			} else {
+				setModalMessage("Registration successful, but login failed. Please log in manually.");
+				openModal();
+				setIsLoginForm(true);
+			}
 		} else {
-			// Обработка сообщения об ошибке
 			const errorMessage =
 				data.message === "User already exists"
 					? "A user with such an email already exists"
@@ -43,8 +46,9 @@ const Register: React.FC = () => {
 		try {
 			const data = await loginUser(email, password);
 
-			if (data.success) {
-				navigate("/personal-account");
+			if (data.message === "Login successful") {
+				closeModal();
+				navigate("/register/personal-account");
 			} else {
 				setModalMessage(data.message || "Login failed: Unknown error");
 				openModal();
@@ -66,7 +70,7 @@ const Register: React.FC = () => {
 
 	return (
 		<>
-			<AppHeader />
+			<Header />
 			<Modal isOpen={isModalOpen} onClose={closeModal}>
 				<p>{modalMessage}</p>
 			</Modal>

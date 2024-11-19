@@ -1,0 +1,113 @@
+.account {
+	display: flex;
+	width: 100%;
+	min-height: 100vh;
+}
+
+.account__management {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+	padding: 20px 6px 20px 0;
+	background: var(--color-001);
+	@include __Box-shadow;
+}
+
+.account__management-wrapper {
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+	height: 100%;
+}
+
+.account__management-header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 15px;
+
+	&>svg {
+		align-self: flex-end;
+		color: var(--color-010);
+		padding: 10px;
+		font-size: clamp(1rem, 0.792rem + 1.11vw, 1.625rem);
+		cursor: pointer;
+	}
+}
+
+.account__management-header-user {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	text-align: center;
+	gap: 9px;
+
+	svg {
+		color: #16171d;
+		background-color: var(--color-010);
+		border-radius: 100%;
+		width: 72px;
+		height: 72px;
+		box-shadow: 0 0 8px -3px #ffffff;
+	}
+
+	p {
+		padding: 0 18px;
+		font-family: "UnifrakturMaguntia", system-ui;
+		font-weight: 400;
+		font-style: normal;
+		font-size: 20px;
+		color: var(--color-white);
+	}
+}
+
+.account__nav {
+	display: flex;
+	flex: 1 0 auto;
+	flex-direction: column;
+	margin-top: 50px;
+
+	a:last-child {
+		margin-top: auto;
+		padding-left: 20px;
+	}
+}
+
+.account__nav-item {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	padding: 20px 22px;
+	position: relative;
+	color: var(--color-white);
+	font-size: clamp(0.875rem, 0.75rem + 0.67vw, 1.25rem);
+	font-family: "UnifrakturMaguntia", system-ui;
+	font-weight: 400;
+	font-style: normal;
+
+	&:hover {
+		background: var(--color-001);
+	}
+
+	span {
+		margin-left: 12px;
+	}
+
+	&.active {
+		svg {
+			color: var(--primary);
+		}
+
+		:after {
+			content: "";
+			position: absolute;
+			top: 0;
+			right: 0;
+			height: 100%;
+			width: 3px;
+			border-radius: 10px;
+			background: var(--primary);
+		}
+	}
+}

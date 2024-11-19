@@ -1,11 +1,11 @@
-import AppHeader from "../layout/Header";
+import Header from "../layout/Header";
 import AppIntroduction from "../components/AppIntroduction";
 import ParallaxBackground from "../components/ParallaxBackground";
 
 const TypingEffect = () => {
 	return (
 		<>
-			<AppHeader />
+			<Header />
 			<AppIntroduction />
 			<ParallaxBackground imageSrc="src/assets/img/ParallaxBackground.png" />
 		</>

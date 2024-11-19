@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleUser as regularCircleUser } from "@fortawesome/free-regular-svg-icons";
 
-const IntroductionAppHeader = () => {
+const Header = () => {
 	return (
 		<header className="header">
 			<section className="header__navigation">
@@ -12,7 +14,7 @@ const IntroductionAppHeader = () => {
 				<nav className="header__nav">
 					<div className="header__office">
 						<Link to="/register" className="header__office-a">
-							<i className="fa-regular fa-circle-user"></i>
+							<FontAwesomeIcon icon={regularCircleUser} />
 							<p>Entrance</p>
 						</Link>
 					</div>
@@ -22,4 +24,4 @@ const IntroductionAppHeader = () => {
 	);
 };
 
-export default IntroductionAppHeader;
+export default Header;

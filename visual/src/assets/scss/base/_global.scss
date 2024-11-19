@@ -17,7 +17,7 @@ body {
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	background-color: var(--black);
+	background-color: #16171d;
 }
 
 .container {
@@ -29,10 +29,10 @@ body {
 
 ::selection {
 	background-color: var(--transparent);
-	color: var(--red);
+	color: var(--color-red);
 }
 
 ::-moz-selection {
 	background-color: var(--transparent);
-	color: var(--red);
+	color: var(--color-red);
 }
